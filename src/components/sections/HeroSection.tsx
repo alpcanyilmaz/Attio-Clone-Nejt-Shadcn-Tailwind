@@ -1,8 +1,11 @@
 import React from 'react'
+import HeroHeaderSection from './HeroHeaderSection'
 
 function HeroSection() {
   return (
-    <div>HeroSection</div>
+    <section>
+      <HeroHeaderSection />
+    </section>
   )
 }
 
