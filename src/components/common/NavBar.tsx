@@ -39,7 +39,7 @@ function NavBar() {
   };
 
   return (
-    <div className="md:sticky md:top-0   md:shadow-none z-20 ">
+    <div className="md:sticky md:top-0 md:shadow-none z-20 mt-[5rem] md:mt-0">
       {/* DESKTOP */}
       <div className=" hidden lg:block animate-in fade-in zoom-in bg-white p-4">
         <div className="flex justify-between mx-[41px] items-center">
@@ -65,8 +65,11 @@ function NavBar() {
             ))}
           </div>
           <div className="flex items-center gap-[20px] select-none">
-    
-            <MainButton text="Sign in" width="contain" classes="bg-white text-[#31373D] border-[#EDEEF0] hover:bg-white" />
+            <MainButton
+              text="Sign in"
+              width="contain"
+              classes="bg-white text-[#31373D] border-[#EDEEF0] hover:bg-white"
+            />
             <MainButton text="Start for free" width="contain" />
           </div>
         </div>
@@ -79,7 +82,7 @@ function NavBar() {
       >
         <div className="flex justify-between mx-[10px]">
           <div className="flex gap-[50px] text-[16px] items-center select-none">
-            <img src="/svgs/sf_logo.svg" alt="logo" className="w-[7rem]" />
+            <img src="/images/logo.svg" alt="logo" className="w-[7rem]" />
           </div>
           <div className="flex items-center gap-[40px]">
             {menu ? (
@@ -89,7 +92,7 @@ function NavBar() {
               />
             ) : (
               <img
-                src="/svgs/hamburger.svg"
+                src="/images/menu.svg"
                 alt="logo"
                 className="cursor-pointer animate-in fade-in zoom-in"
                 onClick={toggleMenu}
@@ -100,15 +103,30 @@ function NavBar() {
         {menu ? (
           <div className="my-8 select-none animate-in slide-in-from-right">
             <div className="flex flex-col gap-8 mt-8 mx-4">
-              <p className="text-black cursor-pointer">
-                <span>How it works</span>
-              </p>
-              {/* Add more links here */}
+              {links.map((item, index) => (
+                <div key={index} className="flex gap-2 items-center">
+                  <p
+                    className={`hover:text-primary cursor-pointer flex items-center gap-2  font-[500] text-gray`}
+                  >
+                    {item.name}
+                  </p>
+                  {item.badgeCount ? (
+                    <span className="h-4 w-4 text-xs rounded-full bg-primary text-white flex items-center justify-center">
+                      {item.badgeCount}
+                    </span>
+                  ) : (
+                    <span />
+                  )}
+                </div>
+              ))}
 
-              <div className="flex flex-col gap-[40px] select-none">
-                <Link href="/auth/login" className="text-black cursor-pointer">
-                  Signin
-                </Link>
+              <div className="flex flex-col gap-[20px] select-none">
+                <MainButton
+                  text="Sign in"
+                  width="contain"
+                  classes="bg-white text-[#31373D] border-[#EDEEF0] hover:bg-white"
+                />
+                <MainButton text="Start for free" width="contain" />
               </div>
             </div>
           </div>

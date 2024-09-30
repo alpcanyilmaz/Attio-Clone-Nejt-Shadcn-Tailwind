@@ -15,8 +15,10 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main>
-      <AlertSection />
-      <NavBar />
+      <div className="flex flex-col-reverse md:flex-col">
+        <AlertSection />
+        <NavBar />
+      </div>
       <HeroSection />
       <MarqueeSection />
       <CRMSection />
