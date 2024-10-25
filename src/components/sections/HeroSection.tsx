@@ -19,12 +19,12 @@ function HeroSection() {
           <MainButton
             text="Start for free"
             size="small"
-            classes="border-none rounded-[12px]"
+            className="border-none rounded-[12px]"
           />
           <MainButton
             text="Talk to sales"
             size="small"
-            classes="bg-white border-slate-50 text-[#31373D]"
+            className="bg-white border-slate-50 text-[#31373D]"
           />
         </div>
         <div className="flex justify-center w-full">
